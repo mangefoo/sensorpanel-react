@@ -28,31 +28,22 @@ class App extends Component {
         };
         client.onmessage = (message) => {
           const data = JSON.parse(message.data);
-          this.setState({
-            data: data
-          })
+          if (data.reporter === 'windows-sensor-agent') {
+            this.setState({
+              data: data
+            })
+          }
           console.log(data);
         };
 
       })
   }
 
-  getFrequency() {
-    if (this.state != null && this.state.data != null) {
-      console.log("Reporter = " + this.state.data.reporter);
-      if (this.state.data.reporter === "windows-sensor-agent") {
-        console.log("Data: " + JSON.stringify(this.state.data));
-        return this.state.data.sensors.cpu_core_frequency_1;
-      }
-    }
-
-    return "N/A";
-  }
-
   cpuPanel() {
     const power = this.state ? parseFloat(this.state.data.sensors.cpu_power).toFixed(2) : "N/A";
     const dieTemp = this.state ? parseFloat(this.state.data.sensors.cpu_die_temp).toFixed(0) : "N/A";
     const packageTemp = this.state ? parseFloat(this.state.data.sensors.cpu_package_temp).toFixed(0) : "N/A";
+    const utilization = this.state ? parseFloat(this.state.data.sensors.cpu_utilization).toFixed(0) : "N/A";
 
     var frequency = "N/A";
     if (this.state != null) {
@@ -62,7 +53,7 @@ class App extends Component {
     }
 
     return (
-      <CpuPanel power={power} dieTemp={dieTemp} packageTemp={packageTemp} frequency={frequency} />
+      <CpuPanel power={power} dieTemp={dieTemp} packageTemp={packageTemp} frequency={frequency} utilization={utilization}/>
     );
   }
 
