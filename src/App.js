@@ -54,7 +54,7 @@ class App extends Component {
     console.log(JSON.stringify(usageHistory));
 
     return (
-      <CpuPanel power={power} dieTemp={dieTemp} packageTemp={packageTemp} frequency={frequency} utilization={utilization} usageHistory={usageHistory}/>
+      <CpuPanel power={power} dieTemp={dieTemp} packageTemp={packageTemp} frequency={frequency} utilization={utilization} usageHistory={usageHistory} />
     );
   }
 
@@ -76,9 +76,17 @@ class App extends Component {
     const packageTemp = data ? parseFloat(data.sensors.gpu_package_temp).toFixed(0) : "N/A";
     const frequency = data ? parseFloat(data.sensors.gpu_frequency).toFixed(0) : "N/A";
     const fps = data ? parseFloat(data.sensors.gpu_fps).toFixed(0) : "N/A";
+    const utilization = data ? parseFloat(data.sensors.gpu_utilization).toFixed(0) : "N/A";
+
+    if (data) {
+      console.log(JSON.stringify(data.sensors));
+    }
+
+    const usageHistory = this.filterStateData("windows-sensor-agent").map((v) => v.sensors.gpu_utilization);
+    console.log(JSON.stringify(usageHistory))
 
     return (
-      <GpuPanel power={power} voltage={voltage} dieTemp={dieTemp} packageTemp={packageTemp} frequency={frequency} fps={fps} />
+      <GpuPanel power={power} voltage={voltage} dieTemp={dieTemp} packageTemp={packageTemp} frequency={frequency} fps={fps} utilization={utilization} usageHistory={usageHistory} />
     );
   }
 

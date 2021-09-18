@@ -1,7 +1,6 @@
 .cpu-panel {
   display: flex;
   flex-direction: column;
-  background-color: transparent;
   width: 480px;
   height: 200px;
 }
@@ -10,7 +9,6 @@
   flex: 1;
   display: flex;
   flex-direction: row;
-  background-color: transparent;
   align-items: center;
   width: 480px;
 }
@@ -25,11 +23,10 @@
 }
 
 .cpu-power {
-  flex: 1.5;
+  flex: 2;
   align-items: center;
   text-align: center;
   font-size: 20px;
-  width: 100px;
 }
 
 .cpu-die-temp {
@@ -37,6 +34,7 @@
   vertical-align: middle;
   text-align:center;
   font-size: 25px;
+  padding-top: 10px;
 }
 
 .cpu-package-temp {
@@ -44,13 +42,14 @@
   vertical-align: middle;
   text-align:center;
   font-size: 25px;
+  padding-top: 10px;
 }
 
 .cpu-frequency {
   flex: 2;
   vertical-align: middle;
   text-align:center;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .cpu-usage-panel {

@@ -29,7 +29,7 @@ export default function Graph(props) {
             { getGridLines() }
             <polyline
                 fill="none"
-                stroke="#00ff00"
+                stroke={props.color}
                 stroke-width="1"
                 points={points}/>
         </svg>
