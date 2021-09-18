@@ -1,3 +1,5 @@
+import './GpuPanel.scss';
+
 function GpuPanel(props) {
     return (
         <div className="gpu-panel">

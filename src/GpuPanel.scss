@@ -1,0 +1,81 @@
+.gpu-panel {
+  background-color: lightyellow;
+  width: 480px;
+  height: 200px;
+}
+
+.gpu-top-bar {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  background-color: lightgreen;
+  width: 480px;
+}
+
+.gpu-title {
+  display: table-cell;
+  width: 20%;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  width: 100px;
+}
+
+.gpu-power-panel {
+  flex: 1;
+  width: 20%;
+  text-align: center;
+  background-color: aqua;
+  font-size: 12px;
+  width: 100px;
+}
+
+.gpu-power {
+  text-align: center;
+  font-size: 12px;
+}
+
+.gpu-voltage {
+  width: 20%;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 12px;
+  width: 100px;
+}
+
+.gpu-panel .gpu-top-bar .gpu-die-temp {
+  display: table-cell;
+  width: 15%;
+  vertical-align: middle;
+  text-align:center;
+}
+
+.gpu-panel .gpu-top-bar .gpu-package-temp {
+  display: table-cell;
+  width: 15%;
+  vertical-align: middle;
+  text-align:center;
+}
+
+.gpu-frequency-panel {
+  display: table-cell;
+  width: 20%;
+  text-align: center;
+  font-size: 12px;
+  width: 100px;
+}
+
+.gpu-frequency {
+  display: table-row;
+  width: 30%;
+  vertical-align: middle;
+  text-align:center;
+}
+j
+.gpu-fps {
+  display: table-row;
+  width: 30%;
+  vertical-align: middle;
+  text-align:center;
+}

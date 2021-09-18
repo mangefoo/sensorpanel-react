@@ -26,6 +26,7 @@ $component-border: transparent;
 }
 
 .left-column {
+  margin-left: 15px;
   width: 50%
 }
 
@@ -33,184 +34,30 @@ $component-border: transparent;
   width: 50%
 }
 
-.cpu-panel {
-  display: flex;
-  flex-direction: column;
-  background-color: transparent;
-  width: 480px;
-  height: 200px;
-}
-
-.cpu-top-bar {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  background-color: transparent;
-  align-items: center;
-  width: 480px;
-}
-
-.cpu-title {
-  flex: 1;
-  align-items: center;
-  vertical-align: middle;
-  text-align: center;
-  font-weight: bold;
-  border: 3px solid $component-border;
-  font-size: 40px;
-}
-
-.cpu-power {
-  flex: 1.5;
-  align-items: center;
-  text-align: center;
-  border: 3px solid $component-border;
-  font-size: 20px;
-  width: 100px;
-}
-
-.cpu-die-temp {
-  flex: 1;
-  vertical-align: middle;
-  text-align:center;
-  font-size: 25px;
-  border: 3px solid $component-border;
-}
-
-.cpu-package-temp {
-  flex: 1;
-  vertical-align: middle;
-  text-align:center;
-  font-size: 25px;
-  border: 3px solid $component-border;
-}
-
-.cpu-frequency {
-  flex: 2;
-  vertical-align: middle;
-  text-align:center;
-  font-size: 30px;
-  border: 3px solid $component-border;
-}
-
-.cpu-usage-panel {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-}
-
-.cpu-usage-bar {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-}
-
-.cpu-usage-label {
-  font-weight: bold;
-  font-size: 20px;
-  flex: 1;
-}
-
-.cpu-usage-graph {
-  flex: 10
-}
-
 .percentage-bar {
-  background-color: black;
+  display: flex;
+  flex-direction: row;
   border: 1px solid gray;
+}
+
+.percentage-bar-filled {
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,121,9,1) 44%, rgba(8,255,0,1) 100%);
+}
+
+.percentage-bar-blank {
+  background: black;
+}
+
+.percentage-bar-text {
+  position: absolute;
+  width: 410px; /* XXX - fix */
   text-align: center;
 }
 
-.cpu-usage-bar {
-  flex: 1;
-}
 
-.gpu-panel {
-  background-color: lightyellow;
-  width: 480px;
-  height: 200px;
-}
 
-.gpu-top-bar {
-  display: table-cell;
-  vertical-align: middle;
-  position: relative;
-  background-color: lightgreen;
-  width: 480px;
-}
-
-.gpu-title {
-  display: table-cell;
-  width: 20%;
-  vertical-align: middle;
-  text-align: center;
-  font-weight: bold;
-  border: 3px solid $component-border;
-  font-size: 30px;
-  width: 100px;
-}
-
-.gpu-power-panel {
-  flex: 1;
-  width: 20%;
-  text-align: center;
-  border: 3px solid $component-border;
+.temperature-gauge-text {
   background-color: aqua;
-  font-size: 12px;
-  width: 100px;
-}
-
-.gpu-power {
+  position: fixed;
   text-align: center;
-  font-size: 12px;
-}
-
-.gpu-voltage {
-  width: 20%;
-  vertical-align: middle;
-  text-align: center;
-  border: 3px solid $component-border;
-  font-size: 12px;
-  width: 100px;
-}
-
-.gpu-panel .gpu-top-bar .gpu-die-temp {
-  display: table-cell;
-  width: 15%;
-  vertical-align: middle;
-  text-align:center;
-  border: 3px solid $component-border;
-}
-
-.gpu-panel .gpu-top-bar .gpu-package-temp {
-  display: table-cell;
-  width: 15%;
-  vertical-align: middle;
-  text-align:center;
-  border: 3px solid $component-border;
-}
-
-.gpu-frequency-panel {
-  display: table-cell;
-  width: 20%;
-  text-align: center;
-  border: 3px solid $component-border;
-  font-size: 12px;
-  width: 100px;
-}
-
-.gpu-frequency {
-  display: table-row;
-  width: 30%;
-  vertical-align: middle;
-  text-align:center;
-  border: 3px solid $component-border;
-}
-
-.gpu-fps {
-  display: table-row;
-  width: 30%;
-  vertical-align: middle;
-  text-align:center;
-  border: 3px solid $component-border;
 }
