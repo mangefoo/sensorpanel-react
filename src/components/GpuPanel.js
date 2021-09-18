@@ -29,7 +29,7 @@ function GpuPanel(props) {
                     <PercentageBar size="6" percentage={props.utilization} color="#ff0000" />
                 </div>
                 <div className="gpu-usage-graph">
-                    <Graph points={props.usageHistory} color="#ff0000" />
+                    <Graph data={[{color: "#ff0000", points: props.usageHistory}]}/>
                 </div>
             </div>
         </div>

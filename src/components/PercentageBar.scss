@@ -1,0 +1,17 @@
+.percentage-bar {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  border: 1px solid gray;
+  height: 22px;
+}
+
+.percentage-bar-blank {
+  background: black;
+}
+
+.percentage-bar-text {
+  position: absolute;
+  /* width: 410px; /* XXX - fix */
+  text-align: center;
+}

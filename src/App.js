@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { w3cwebsocket as W3CWebSocket } from "websocket";
-import CpuPanel from "./CpuPanel";
-import GpuPanel from "./GpuPanel";
+import CpuPanel from "./components/CpuPanel";
+import GpuPanel from "./components/GpuPanel";
+import NetworkPanel from './components/NetworkPanel';
 
 class App extends Component {
   constructor(props) {
@@ -33,6 +34,30 @@ class App extends Component {
         };
 
       })
+  }
+
+  networkPanel() {
+    const data = this.getLatestData("windows-sensor-agent");
+
+    var received = ((data ? parseInt(data.sensors.network_received_bytes_1) : 0) * 8 / 1000000).toFixed(2);
+    var sent = ((data ? parseInt(data.sensors.network_sent_bytes_1) : 0) * 8 / 1000000).toFixed(2);
+
+    var receivedHistory = [];
+    var sentHistory = [];
+
+    if (data) {
+      receivedHistory = this.filterStateData("windows-sensor-agent")
+        .map((v) => v.sensors.network_received_bytes_1 * 8 / 1000000)
+        .map(v => v > 100 ? 100 : v);
+
+      sentHistory = this.filterStateData("windows-sensor-agent")
+        .map((v) => v.sensors.network_sent_bytes_1 * 8 / 1000000)
+        .map(v => v > 100 ? 100 : v);
+    }
+
+    return (
+      <NetworkPanel received={received} receivedHistory={receivedHistory} sent={sent} sentHistory={sentHistory} />
+    );
   }
 
   cpuPanel() {
@@ -96,6 +121,7 @@ class App extends Component {
         <div className="left-column">
           {this.cpuPanel()}
           {this.gpuPanel()}
+          {this.networkPanel()}
         </div>
       </div>
     );

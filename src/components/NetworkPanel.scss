@@ -1,0 +1,89 @@
+.network-panel {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: 200px;
+}
+
+.network-top-bar {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 480px;
+}
+
+.network-title {
+    flex: 1;
+    vertical-align: middle;
+    text-align: left;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.network-usage-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.network-usage-bar {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.network-received-bar {
+    flex: 1;
+    margin-right: 5px;
+}
+
+.network-sent-bar {
+    flex: 1;
+    padding-left: 5px;
+}
+
+.network-usage-label {
+    font-weight: bold;
+    font-size: 20px;
+    flex: 1;
+}
+
+.network-usage-graph {
+    flex: 10;
+}
+
+.network-usage-bar {
+    flex: 1;
+}
+
+.network-legend {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.network-legend-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.network-receive-legend {
+    margin-top: 3px;
+    width: 10px;
+    height: 10px;
+    background: #cccc00;
+    margin-right: 5px;
+}
+
+.network-send-legend {
+    margin-top: 3px;
+    width: 10px;
+    height: 10px;
+    background: #00ffff;
+    margin-right: 5px;
+}

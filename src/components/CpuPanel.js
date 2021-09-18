@@ -23,7 +23,7 @@ function CpuPanel(props) {
                     <PercentageBar size="6" percentage={props.utilization} color="#00ff00"/>
                 </div>
                 <div className="cpu-usage-graph">
-                    <Graph points={props.usageHistory} color="#00ff00"/>
+                    <Graph data={[{color: "#00ff00", points: props.usageHistory}]}/>
                 </div>
             </div>
         </div>

@@ -33,29 +33,3 @@ $component-border: transparent;
 .right-column {
   width: 50%
 }
-
-.percentage-bar {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid gray;
-}
-
-.percentage-bar-filled {
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,121,9,1) 44%, rgba(8,255,0,1) 100%);
-}
-
-.percentage-bar-blank {
-  background: black;
-}
-
-.percentage-bar-text {
-  position: absolute;
-  width: 410px; /* XXX - fix */
-  text-align: center;
-}
-
-.temperature-gauge-text {
-  background-color: aqua;
-  position: fixed;
-  text-align: center;
-}

@@ -1,21 +1,19 @@
-.gpu-panel {
+.cpu-panel {
   display: flex;
   flex-direction: column;
-  background-color: transparent;
   width: 480px;
   height: 200px;
 }
 
-.gpu-top-bar {
+.cpu-top-bar {
   flex: 1;
   display: flex;
   flex-direction: row;
-  background-color: transparent;
   align-items: center;
   width: 480px;
 }
 
-.gpu-title {
+.cpu-title {
   flex: 1;
   align-items: center;
   vertical-align: middle;
@@ -24,27 +22,14 @@
   font-size: 40px;
 }
 
-.gpu-power-panel {
-    display: flex;
-    flex-direction: column;
-    flex: 2;
-}
-
-.gpu-power {
-  flex: 1;
+.cpu-power {
+  flex: 2;
   align-items: center;
   text-align: center;
   font-size: 20px;
 }
 
-.gpu-voltage {
-  flex: 1;
-  align-items: center;
-  text-align: center;
-  font-size: 20px;
-}
-
-.gpu-die-temp {
+.cpu-die-temp {
   flex: 1;
   vertical-align: middle;
   text-align:center;
@@ -52,7 +37,7 @@
   padding-top: 10px;
 }
 
-.gpu-package-temp {
+.cpu-package-temp {
   flex: 1;
   vertical-align: middle;
   text-align:center;
@@ -60,47 +45,37 @@
   padding-top: 10px;
 }
 
-.gpu-frequency-panel {
-    display: flex;
-    flex-direction: column;
-    flex: 2;
-}
-
-.gpu-frequency {
-  flex: 1;
+.cpu-frequency {
+  flex: 2;
+  vertical-align: middle;
+  text-align:center;
   font-size: 25px;
-  padding-left: 10px;
 }
 
-.gpu-fps {
-  flex: 1;
-  font-size: 25px;
-  padding-left: 10px;
-}
-
-.gpu-usage-panel {
+.cpu-usage-panel {
   flex: 2;
   display: flex;
   flex-direction: column;
 }
 
-.gpu-usage-bar {
+.cpu-usage-bar {
   flex: 1;
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
 }
 
-.gpu-usage-label {
+.cpu-usage-label {
   font-weight: bold;
   font-size: 20px;
+  margin-right: 10px;
   flex: 1;
 }
 
-.gpu-usage-graph {
+.cpu-usage-graph {
   flex: 10
 }
 
-.gpu-usage-bar {
+.cpu-usage-bar {
   flex: 1;
 }
