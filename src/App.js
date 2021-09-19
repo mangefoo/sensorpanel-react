@@ -29,7 +29,7 @@ class App extends Component {
         client.onmessage = (message) => {
           const data = JSON.parse(message.data);
           this.setState((prevState) => ({
-            data: prevState.data.length > 0 ? [data, ...prevState.data] : [data]
+            data: prevState.data.length > 0 ? [data, ...prevState.data.slice(0, 600)] : [data]
           }));
         };
 
