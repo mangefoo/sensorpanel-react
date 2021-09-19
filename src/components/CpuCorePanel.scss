@@ -1,0 +1,44 @@
+.cpu-core-panel {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  height: 200px;
+}
+
+.cpu-core-title {
+  flex: 1;
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: 15px;
+}
+
+.cpu-core-cores {
+  display: flex;
+  flex-direction: row;
+  flex: 10;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.cpu-core-cores-left {
+  margin-right: 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cpu-core-cores-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.cpu-core-row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  margin-bottom: 5px;
+}

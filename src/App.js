@@ -4,6 +4,7 @@ import { w3cwebsocket as W3CWebSocket } from "websocket";
 import CpuPanel from "./components/CpuPanel";
 import GpuPanel from "./components/GpuPanel";
 import NetworkPanel from './components/NetworkPanel';
+import CpuCorePanel from './components/CpuCorePanel';
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +20,6 @@ class App extends Component {
       topics: ["sensors", "actions"]
     })
       .then((response) => {
-        console.log("Got response " + JSON.stringify(response));
         const client = new W3CWebSocket('ws://sensor-relay.int.mindphaser.se/ws/' + response.data.id);
 
         //        const client = new W3CWebSocket('ws://127.0.0.1:3000/ws/' + response.data.id);
@@ -76,7 +76,6 @@ class App extends Component {
     }
 
     const usageHistory = this.filterStateData("windows-sensor-agent").map((v) => v.sensors.cpu_utilization);
-    console.log(JSON.stringify(usageHistory));
 
     return (
       <CpuPanel power={power} dieTemp={dieTemp} packageTemp={packageTemp} frequency={frequency} utilization={utilization} usageHistory={usageHistory} />
@@ -103,15 +102,18 @@ class App extends Component {
     const fps = data ? parseFloat(data.sensors.gpu_fps).toFixed(0) : "N/A";
     const utilization = data ? parseFloat(data.sensors.gpu_utilization).toFixed(0) : "N/A";
 
-    if (data) {
-      console.log(JSON.stringify(data.sensors));
-    }
-
     const usageHistory = this.filterStateData("windows-sensor-agent").map((v) => v.sensors.gpu_utilization);
-    console.log(JSON.stringify(usageHistory))
 
     return (
       <GpuPanel power={power} voltage={voltage} dieTemp={dieTemp} packageTemp={packageTemp} frequency={frequency} fps={fps} utilization={utilization} usageHistory={usageHistory} />
+    );
+  }
+
+  cpuCorePanel() {
+    const data = this.getLatestData("windows-sensor-agent");
+
+    return (
+      <CpuCorePanel sensors={data ? data.sensors: {}}/>
     );
   }
 
@@ -122,6 +124,9 @@ class App extends Component {
           {this.cpuPanel()}
           {this.gpuPanel()}
           {this.networkPanel()}
+        </div>
+        <div className="right-column">
+          {this.cpuCorePanel()}
         </div>
       </div>
     );
