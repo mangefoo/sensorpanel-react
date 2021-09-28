@@ -1,0 +1,56 @@
+.memory-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: 200px;
+}
+
+.memory-top-bar {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 480px;
+}
+
+.memory-title {
+    flex: 1;
+    vertical-align: middle;
+    text-align: left;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.memory-usage-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.memory-usage-bar {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.memory-usage-label {
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+    flex: 1;
+}
+
+.memory-usage-bar {
+    flex: 1;
+}
+
+.memory-summary {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    padding-left: 20px;
+    padding-top: 10px;
+}

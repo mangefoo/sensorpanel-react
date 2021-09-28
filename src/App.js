@@ -5,6 +5,7 @@ import CpuPanel from "./components/CpuPanel";
 import GpuPanel from "./components/GpuPanel";
 import NetworkPanel from './components/NetworkPanel';
 import CpuCorePanel from './components/CpuCorePanel';
+import MemoryPanel from './components/MemoryPanel';
 
 class App extends Component {
   constructor(props) {
@@ -117,6 +118,16 @@ class App extends Component {
     );
   }
 
+  memoryPanel() {
+    const data = this.getLatestData("windows-sensor-agent");
+    const used = data ? parseFloat(data.sensors.mem_used).toFixed(2) : 0;
+    const available = data ? parseFloat(data.sensors.mem_available).toFixed(2) : 0;
+
+    return (
+      <MemoryPanel used={used} available={available}/>
+    )
+  }
+
   render() {
     return (
       <div className="sensor-panel">
@@ -127,6 +138,7 @@ class App extends Component {
         </div>
         <div className="right-column">
           {this.cpuCorePanel()}
+          {this.memoryPanel()}
         </div>
       </div>
     );
