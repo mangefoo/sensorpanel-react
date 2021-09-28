@@ -17,8 +17,6 @@ function getCoreMeters(props) {
         .map(key => { return { core: parseInt(extractCore(key)), value: parseInt(parseFloat(props.sensors[key]).toFixed(0)) } })
         .sort((first, second) => first.core < second.core ? -1 : 1);
 
-    console.log("Cores: " + JSON.stringify(cores));
-
     return ["cpu-core-cores-left", "cpu-core-cores-right"].map((column, i) => {
         return (
             <div className={column}>
