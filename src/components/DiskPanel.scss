@@ -1,4 +1,4 @@
-.memory-panel {
+.disk-panel {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -6,16 +6,15 @@
     margin-top: 10px;
 }
 
-.memory-top-bar {
+.disk-top-bar {
     flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 480px;
-    margin-bottom: 10px;
 }
 
-.memory-title {
+.disk-title {
     flex: 1;
     vertical-align: middle;
     text-align: left;
@@ -23,35 +22,55 @@
     font-size: 40px;
 }
 
-.memory-usage-panel {
+.disk-usage-panel {
     flex: 2;
     display: flex;
     flex-direction: column;
 }
 
-.memory-usage-bar {
+.disk-usage-bar {
     flex: 1;
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
 }
 
-.memory-usage-label {
+.disk-usage-label {
     font-weight: bold;
     font-size: 20px;
     margin-right: 10px;
     flex: 1;
 }
 
-.memory-usage-bar {
+.disk-usage-bar {
     flex: 1;
 }
 
-.memory-summary {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    font-size: 12px;
-    padding-left: 20px;
-    padding-top: 10px;
+.disk-usage {
+  display: flex;
+  flex-direction: row;
+  flex: 10;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.disk-usage-left {
+  margin-right: 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.disk-usage-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.disk-usage-row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  margin-bottom: 5px;
 }

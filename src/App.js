@@ -6,6 +6,7 @@ import GpuPanel from "./components/GpuPanel";
 import NetworkPanel from './components/NetworkPanel';
 import CpuCorePanel from './components/CpuCorePanel';
 import MemoryPanel from './components/MemoryPanel';
+import DiskPanel from './components/DiskPanel';
 
 class App extends Component {
   constructor(props) {
@@ -128,6 +129,14 @@ class App extends Component {
     )
   }
 
+  diskPanel() {
+    const data = this.getLatestData("windows-sensor-agent");
+
+    return (
+      <DiskPanel sensors={data ? data.sensors : {}}/>
+    );
+  }
+
   render() {
     return (
       <div className="sensor-panel">
@@ -139,6 +148,7 @@ class App extends Component {
         <div className="right-column">
           {this.cpuCorePanel()}
           {this.memoryPanel()}
+          {this.diskPanel()}
         </div>
       </div>
     );

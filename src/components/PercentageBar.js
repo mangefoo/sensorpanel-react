@@ -4,7 +4,7 @@ function PercentageBar(props) {
     const max = props.max ? parseFloat(props.max) : 100;
     const suffix = props.suffix ? props.suffix : "%";
     const display = props.display ? props.display : props.percentage + suffix;
-    var usedSize = parseFloat(props.percentage);
+    var usedSize = props.percentage ? parseFloat(props.percentage) : 0;
     if (usedSize > max) {
         usedSize = max;
     }

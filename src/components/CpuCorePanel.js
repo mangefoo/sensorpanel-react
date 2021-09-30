@@ -22,7 +22,7 @@ function getCoreMeters(props) {
             <div className={column}>
                 {
                     cores.slice(i * (cores.length / 2), (i + 1) * cores.length / 2)
-                        .map(core => (<div className="cpu-core-row"><div style={{width: "34px", textAlign: "left"}}>#{core.core}</div><PercentageBar size="1" percentage={core.value} display={parseInt(props.sensors["cpu_core_frequency_" + core.core]) + " MHz"} color={color} /></div>))
+                        .map(core => (<div key={column + "-" + core.core} className="cpu-core-row"><div style={{width: "34px", textAlign: "left"}}>#{core.core}</div><PercentageBar size="1" percentage={core.value} display={parseInt(props.sensors["cpu_core_frequency_" + core.core]) + " MHz"} color={color} /></div>))
                 }
             </div>);
     });
