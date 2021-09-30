@@ -18,7 +18,7 @@ function MemoryPanel(props) {
             <div className="memory-usage-panel">
                 <div className="memory-usage-bar">
                     <div className="memory-usage-label">Usage</div>
-                    <PercentageBar size="6" percentage={percentage} color="#6666ff" />
+                    <PercentageBar size="6" percentage={percentage} color="#3333ff" />
                 </div>
             </div>
         </div>

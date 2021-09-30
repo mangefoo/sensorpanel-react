@@ -1,0 +1,3 @@
+[submodule "src/sensorpanel-resources"]
+	path = src/sensorpanel-resources
+	url = git@github.com:mangefoo/sensorpanel-resources.git
