@@ -7,6 +7,7 @@ import NetworkPanel from './components/NetworkPanel';
 import CpuCorePanel from './components/CpuCorePanel';
 import MemoryPanel from './components/MemoryPanel';
 import DiskPanel from './components/DiskPanel';
+import DataPanel from './components/DataPanel';
 
 class App extends Component {
   constructor(props) {
@@ -137,6 +138,13 @@ class App extends Component {
     );
   }
 
+  dataPanel() {
+    const data = this.getLatestData("hue-sensor-agent");
+    return (
+      <DataPanel sensors={data ? data.sensors : {}}/>
+    )
+  }
+
   render() {
     return (
       <div className="sensor-panel">
@@ -150,6 +158,7 @@ class App extends Component {
           {this.memoryPanel()}
           {this.diskPanel()}
         </div>
+          {this.dataPanel()}
       </div>
     );
   }

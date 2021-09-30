@@ -16,6 +16,7 @@ code {
 $component-border: transparent;
 
 .sensor-panel {
+  position: relative;
   display: flex;
   width: 1024px;
   height: 600px;
