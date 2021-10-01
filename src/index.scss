@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
+  background-color: #b0b0b0;
 }
 
 code {
@@ -23,6 +24,13 @@ $component-border: transparent;
   margin: auto;
   background-color: transparent;
   background-image: url("/sensorpanel-resources/images/windows_7_1024.png");
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .left-column {

@@ -116,7 +116,7 @@ class App extends Component {
     const data = this.getLatestData("windows-sensor-agent");
 
     return (
-      <CpuCorePanel sensors={data ? data.sensors: {}}/>
+      <CpuCorePanel sensors={data ? data.sensors : {}} />
     );
   }
 
@@ -126,7 +126,7 @@ class App extends Component {
     const available = data ? parseFloat(data.sensors.mem_available).toFixed(2) : 0;
 
     return (
-      <MemoryPanel used={used} available={available}/>
+      <MemoryPanel used={used} available={available} />
     )
   }
 
@@ -134,31 +134,33 @@ class App extends Component {
     const data = this.getLatestData("windows-sensor-agent");
 
     return (
-      <DiskPanel sensors={data ? data.sensors : {}}/>
+      <DiskPanel sensors={data ? data.sensors : {}} />
     );
   }
 
   dataPanel() {
     const data = this.getLatestData("hue-sensor-agent");
     return (
-      <DataPanel sensors={data ? data.sensors : {}}/>
+      <DataPanel sensors={data ? data.sensors : {}} />
     )
   }
 
   render() {
     return (
-      <div className="sensor-panel">
-        <div className="left-column">
-          {this.cpuPanel()}
-          {this.gpuPanel()}
-          {this.networkPanel()}
-        </div>
-        <div className="right-column">
-          {this.cpuCorePanel()}
-          {this.memoryPanel()}
-          {this.diskPanel()}
-        </div>
+      <div className="center">
+        <div className="sensor-panel">
+          <div className="left-column">
+            {this.cpuPanel()}
+            {this.gpuPanel()}
+            {this.networkPanel()}
+          </div>
+          <div className="right-column">
+            {this.cpuCorePanel()}
+            {this.memoryPanel()}
+            {this.diskPanel()}
+          </div>
           {this.dataPanel()}
+        </div>
       </div>
     );
   }
